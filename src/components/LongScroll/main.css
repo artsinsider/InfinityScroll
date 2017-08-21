@@ -1,0 +1,40 @@
+.items-block{
+    overflow: auto;
+    height: 50vh;
+    width: 100vh;
+    margin:  auto;
+    border: 1px solid #d4d4d4;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.items-block button {
+    display: none;
+}
+
+
+.handel-scroll-down, .handel-scroll-top {
+    background-repeat: no-repeat;
+    width: 25px;
+    height: 25px;
+    background-size: 100%;
+    display: inline-block;
+    text-align: center;
+    margin: 10px;
+    cursor: pointer;
+}
+
+.handel-scroll-top {
+    background-image: url('../../img/up.png');
+}
+.handel-scroll-top:hover {
+    background-image: url('../../img/up-hover.png');
+}
+
+.handel-scroll-down{
+    background-image: url('../../img/down.png');
+}
+
+.handel-scroll-down:hover{
+    background-image: url('../../img/down-hover.png');
+}

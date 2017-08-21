@@ -24,7 +24,8 @@ class App extends Component {
         for( let i = from; i <= to; i += 1 ) {
             const unicKey = Math.random().toFixed(4)
             result.push(
-                <div key={i + unicKey} style={news} >
+                <div key={i + unicKey} style={news}
+                     id={'$' + (i + unicKey)} >
                     <h4 style={tittle} >{i}. {str1}</h4>
                     <span>{str2}</span>
                 </div> )
@@ -33,18 +34,14 @@ class App extends Component {
     }
 
   render() {
-    const { from, to } = this.state
-      console.log('from', from);
-      console.log('to', to);
+    const { from, to } = this.state;
+
     return (
       <div className="App">
         <div className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
-          <h2>Welcome to React</h2>
+          <h1>Infinity Scroll</h1>
         </div>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
           <div>
               <LongScroll
                   {...this.props}
