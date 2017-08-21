@@ -33,6 +33,10 @@ export default class LongScroll extends PureComponent{
     handlerScroll = () => {
         const { scrollTop, scrollHeight, offsetHeight } = this.getScrollInfo();
 
+        console.log('scrollTop', scrollTop);  // -- расположение скрола
+        console.log('scrollHeight', scrollHeight); // -- высота скрола
+        console.log('offsetHeight', offsetHeight); // -- высота блока скрола
+
         if(this.disableScroll) {
             return;
         }
