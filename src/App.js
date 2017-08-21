@@ -6,24 +6,36 @@ import LongScroll from './components/LongScroll/LongScroll'
 class App extends Component {
 
     state = {
-        from: -5,
-        to: 5
+        from: 0,
+        to: 55
     }
 
     changeHandler = ({ from, to }) => this.setState({ from, to });
 
     getItems = () => {
         const { from, to } = this.state;
+        const str1 = 'Lorem ipsum dolor sit amet, consectetur adipisicing elit.';
+        const str2 = 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. ' +
+                     'Alias commodi, eum itaque minus possimus qui suscipit.';
+        const news = { borderBottom: '1px solid #d4d4d4', paddingBottom: '10px' };
+        const tittle = { color: '#4d4d4d'};
         const result = [];
+
         for( let i = from; i <= to; i += 1 ) {
-            result.push( <div key={i} >{i}</div> )
+            const unicKey = Math.random().toFixed(4)
+            result.push(
+                <div key={i + unicKey} style={news} >
+                    <h4 style={tittle} >{i}. {str1}</h4>
+                    <span>{str2}</span>
+                </div> )
         }
         return result;
     }
 
   render() {
     const { from, to } = this.state
-
+      console.log('from', from);
+      console.log('to', to);
     return (
       <div className="App">
         <div className="App-header">
