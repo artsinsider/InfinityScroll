@@ -3,11 +3,19 @@ import logo from './logo.svg';
 import './App.css';
 import LongScroll from './components/LongScroll/LongScroll'
 
+import * as sok from '../src/utils/soket.js'
+// import io from 'socket.io-client';
+
+// console.log('AS', sok.socket)
 class App extends Component {
 
     state = {
         from: 0,
         to: 55
+    }
+
+    componentDidMount() {
+        // sok.socket()
     }
 
     changeHandler = ({ from, to }) => this.setState({ from, to });
